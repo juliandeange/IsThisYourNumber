@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
-import './App.css';
+import './IsThisYourNumber.css';
 
 const minNumber = 1000000000
 const maxNumber = 9999999999
 
-function App() {
+function IsThisYourNumber() {
 
     const [phoneNumber, setPhoneNumber] = useState(0)
     const [showNice, setShowNice] = useState(false)
@@ -52,4 +52,4 @@ function App() {
     );
 }
 
-export default App;
+export default IsThisYourNumber;
