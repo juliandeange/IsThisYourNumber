@@ -7,12 +7,19 @@ const maxNumber = 9999999999
 function App() {
 
     const [phoneNumber, setPhoneNumber] = useState(0)
+    const [showNice, setShowNice] = useState(false)
 
     useEffect(() => {
 
         RandomPhoneNumber()
 
     }, [])
+
+    const YesClicked = () => {
+
+        setShowNice(true)
+
+    }
 
     const RandomPhoneNumber = () => {
 
@@ -24,14 +31,21 @@ function App() {
     return (
         <div className="App">
             <div className='App-header'>
-                <div>
-                    Is this your phone number? {phoneNumber}
-                </div>
-                <div>
-                    <button>yes</button>
-                    {' '}
-                    <button onClick={() => RandomPhoneNumber()}>no</button>
-                </div>
+
+                {!showNice ?
+                    <div>
+                        <div>
+                            Is this your number? {phoneNumber}
+                        </div>
+                        <div>
+                            <button style={{ WebkitAppearance: 'none', MozAppearance: 'none', appearance: 'none' }} onClick={() => YesClicked()}>yes</button>
+                            {' '}
+                            <button style={{ WebkitAppearance: 'none', MozAppearance: 'none', appearance: 'none' }} onClick={() => RandomPhoneNumber()}>no</button>
+                        </div>
+                    </div>
+                    :
+                    <div>nice!</div>
+                }
             </div>
         </div>
 
